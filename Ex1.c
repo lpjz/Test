@@ -56,6 +56,7 @@ int main() {
     add(pList, 3);
     add(pList, 4);
     add(pList, 5);
+    add(pList, 6);
     printList(pList);
     return 0;
 }
