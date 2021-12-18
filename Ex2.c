@@ -1,56 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct headnode{
-    int count ;
-    struct datanode *head ;
+struct headnode
+{
+    int count;
+    struct datanode *head;
 };
-struct datanode{
+struct datanode
+{
     int data;
     struct datanode *link;
 };
-void add(struct headnode *list, int datao){
-    if(list -> head == NULL){
+void add(struct headnode *list, int datao)
+{
+    if (list->head == NULL)
+    {
         struct datanode *newdata = malloc(sizeof(struct datanode));
         newdata->data = datao;
         newdata->link = NULL;
-        list->count++ ;
+        list->count++;
         list->head = newdata;
     }
-    else if(list->count == 1){
+    else if (list->count == 1)
+    {
         struct datanode *newdata = malloc(sizeof(struct datanode));
         list->head->link = newdata;
         newdata->data = datao;
         newdata->link = NULL;
-        list->count++ ;
+        list->count++;
     }
-    else{
+    else
+    {
         struct datanode *current = list->head;
-        struct datanode *previous ;
-        for(int i = 0; i <= (list->count)-1; i++){
+        struct datanode *previous;
+        for (int i = 0; i <= (list->count) - 1; i++)
+        {
             previous = current;
             current = current->link;
         }
         struct datanode *newdata = malloc(sizeof(struct datanode));
-        previous -> link = newdata;
+        previous->link = newdata;
         newdata->data = datao;
         newdata->link = NULL;
-        list->count++ ;
+        list->count++;
     };
 };
-void printList(struct headnode *list){
+void printList(struct headnode *list)
+{
     struct datanode *current = list->head;
-    for(int i = 0; i <= (list->count)-1; i++){
+    for (int i = 0; i <= (list->count) - 1; i++)
+    {
         printf("%d\n", current->data);
         current = current->link;
     };
 };
 
-int main() {
+int main()
+{
     struct headnode *pList;
     pList = malloc(sizeof(struct headnode));
-    pList -> count=0;
-    pList -> head=NULL;
+    pList->count = 0;
+    pList->head = NULL;
 
     add(pList, 1);
     add(pList, 2);
