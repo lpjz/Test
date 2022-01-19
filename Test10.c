@@ -94,21 +94,21 @@ int main()
     pList->count = 0;
     pList->head = NULL;
 
-    InsertEnd(39, pList);
-    InsertEnd(52, pList);
-    InsertEnd(99,pList);
-    InsertEnd(1,pList);
-    InsertEnd(2,pList);
-    InsertEnd(3,pList);
+    InsertEnd(3, pList);
+    InsertEnd(4, pList);
+    InsertEnd(6,pList);
+    InsertEnd(8,pList);
+    // InsertEnd(2,pList);
+    // InsertEnd(3,pList);
 
-    Deletelastnode(pList);
+    Deletenode(pList);
 
     printf("%d\n", pList->head->data);
     printf("%d\n", pList->head->link->data);
     printf("%d\n",pList->head->link->link->data);
     printf("%d\n",pList->head->link->link->link->data);
-    printf("%d\n",pList->head->link->link->link->link->data);
-    printf("%d\n",pList->head->link->link->link->link->link->data);
+    // printf("%d\n",pList->head->link->link->link->link->data);
+    // printf("%d\n",pList->head->link->link->link->link->link->data);
     // printList(pList);
     printf("count=%d", pList->count);
 
